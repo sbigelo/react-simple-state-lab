@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-export default class Cell extends Component { 
+class Cell extends React.Component {
 
     constructor(props) {
         super()
@@ -9,18 +9,19 @@ export default class Cell extends Component {
         }
     }
 
-
-    handleClick = () => {
+    clicked = () => {
         this.setState({
-        color: '#333'
+            color: '#333'
         })
     }
 
     render() {
         return(
-            <div className='cell' style={{ backgroundColor: this.state.color }} onClick={this.handleClick} ></div>
+            <div style={{backgroundColor: this.state.color}} onClick={this.clicked} className="cell">
+
+            </div>
         )
     }
-
 }
 
+export default Cell
